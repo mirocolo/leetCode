@@ -35,5 +35,10 @@ public class Application3Test {
 	public void lengthOfLongestSubstring() {
 		int result = application3.lengthOfLongestSubstring(inputStr);
 		Assert.assertEquals("求解最大子串长度错误",result,expected);
+
+		int result2 = application3.lengthOfLongestSubstringBetter(inputStr);
+		Assert.assertEquals("求解最大子串长度错误", result2, expected);
 	}
+
+
 }
