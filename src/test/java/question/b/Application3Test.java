@@ -28,14 +28,17 @@ public class Application3Test {
 
 	@Parameterized.Parameters
 	public static Collection<Object[]> data() {
-		return Arrays.asList(new Object[][]{{"abcabcbb",3},{"bbbbb",1},{"pwwkew",3},{"aaabcdeabcde",5}});
+		return Arrays.asList(new Object[][]{{"abcabcbb", 3}, {"bbbbb", 1}, {"pwwkew", 3}, {"aaabcdeabcde", 5}});
 	}
 
 	@Test
 	public void lengthOfLongestSubstring() {
 		int result = application3.lengthOfLongestSubstring(inputStr);
-		Assert.assertEquals("求解最大子串长度错误",result,expected);
+		Assert.assertEquals("求解最大子串长度错误", result, expected);
+	}
 
+	@Test
+	public void lengthOfLongestSubstringBetter() {
 		int result2 = application3.lengthOfLongestSubstringBetter(inputStr);
 		Assert.assertEquals("求解最大子串长度错误", result2, expected);
 	}
