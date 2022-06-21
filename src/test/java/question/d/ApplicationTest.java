@@ -33,7 +33,7 @@ public class ApplicationTest extends TestCase {
     }
 
     @Test
-    public void longestPalindrome() {
+    public void longestPalindromeVer1() {
         String result = application.longestPalindromeVer1(input);
         Assert.assertEquals(this.result, result);
     }
