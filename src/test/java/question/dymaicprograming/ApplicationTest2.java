@@ -41,8 +41,8 @@ public class ApplicationTest2 extends TestCase {
     }
 
     @Test
-    public void longestUpArrayNum() {
-        Integer outPut = application.longestUpArrayNum(input);
+    public void lengthOfLIS() {
+        Integer outPut = application.lengthOfLIS(input);
         Assert.assertEquals(result, outPut);
     }
 
