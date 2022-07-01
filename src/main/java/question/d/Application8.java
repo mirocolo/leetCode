@@ -16,7 +16,7 @@ public class Application8 {
         for (char c : s.toCharArray()) {
             atoiMachine.get(c);
         }
-        return atoiMachine.flag * atoiMachine.ans;
+        return atoiMachine.getRes();
     }
 
     static class AtoiMachine {
