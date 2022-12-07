@@ -48,7 +48,7 @@ public class Application15 {
         List<List<Integer>> res = new ArrayList<>();
         int length = nums.length;
         for (int i = 0; i < length; i++) {
-            //排在前面的已经大于0 不可能出现和为0
+            //排在前面的第一个数字已经大于0 不可能出现和为0
             if (nums[i] > 0) {
                 return res;
             }
@@ -60,7 +60,9 @@ public class Application15 {
             while (r > l) {
                 int tempRes = nums[i] + nums[l] + nums[r];
                 if (tempRes == 0) {
+                    // 找到一组答案后 继续二次扫描
                     res.add(List.of(nums[i], nums[l], nums[r]));
+                    // 快速缩小左右锚点，排除重复数值
                     while (l < r && nums[l] == nums[l + 1]) {
                         l = l + 1;
                     }

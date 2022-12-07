@@ -36,13 +36,40 @@ public class ListNode {
         return Objects.hash(val, next);
     }
 
+    /**
+     * ListNode: 1->2>3
+     * start: curr>1 pre=null;
+     *      do:
+     *          1->null 2->3  curr->2 pre->1
+     *          2->1->null 3   curr->3 pre->2
+     *          3->2->1        curr->null pre->3
+     *
+     * @param start
+     * @return
+     */
+    public static ListNode reverse(ListNode start) {
+        ListNode pre = null;
+        ListNode curr = start;
+        while (curr != null) {
+
+            ListNode next = curr.next;
+            curr.next = pre;
+            pre = curr;
+            curr = next;
+        }
+
+        return pre;
+
+
+    }
+
     public static ListNode createListNodeByIntArray(int... args) {
         ListNode res = new ListNode(0);
         ListNode head = res;
 
         for (int i = 0, argsLength = args.length; i < argsLength; i++) {
             res.val = args[i];
-            if(i!=args.length-1){
+            if (i != args.length - 1) {
                 res.next = new ListNode(0);
                 res = res.next;
             }
